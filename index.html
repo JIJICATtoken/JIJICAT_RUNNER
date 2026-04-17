@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIJICAT RUNNER - PLAY • EARN • DOMINATE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    
+    <!-- Start Screen -->
+    <div id="startScreen" class="screen active">
+        <div class="screen-content">
+            <div class="game-title">JIJICAT RUNNER</div>
+            <div class="subtitle">PLAY • EARN • DOMINATE</div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='90' fill='%23fff' opacity='0.1'/%3E%3Ccircle cx='100' cy='100' r='60' fill='%23ffd700'/%3E%3C/svg%3E" alt="Cat Logo" class="logo">
+            <div class="stats-display">
+                <div class="stat-item">
+                    <span class="stat-label">Best Score:</span>
+                    <span class="stat-value" id="bestScore">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total Coins:</span>
+                    <span class="stat-value" id="totalCoins">0</span>
+                </div>
+            </div>
+            <button id="playBtn" class="btn btn-play">PLAY NOW</button>
+            <button id="leaderboardBtn" class="btn btn-leaderboard">LEADERBOARD</button>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="screen">
+        <div class="screen-content">
+            <div class="game-over-title">GAME OVER</div>
+            <div class="game-over-stats">
+                <div class="score-display">
+                    <div class="score-label">FINAL SCORE</div>
+                    <div class="score-value" id="finalScore">0</div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <span class="label">Distance</span>
+                        <span class="value" id="distanceValue">0m</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Coins</span>
+                        <span class="value" id="coinsValue">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Combo</span>
+                        <span class="value" id="comboValue">0x</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Time</span>
+                        <span class="value" id="timeValue">0s</span>
+                    </div>
+                </div>
+            </div>
+            <button id="restartBtn" class="btn btn-play">PLAY AGAIN</button>
+            <button id="homeBtn" class="btn btn-secondary">HOME</button>
+        </div>
+    </div>
+
+    <!-- Leaderboard Screen -->
+    <div id="leaderboardScreen" class="screen">
+        <div class="screen-content leaderboard-content">
+            <div class="leaderboard-title">🏆 LEADERBOARD 🏆</div>
+            <div id="leaderboardList" class="leaderboard-list">
+                <div class="loading">Loading...</div>
+            </div>
+            <button id="leaderboardBackBtn" class="btn btn-secondary">BACK</button>
+        </div>
+    </div>
+
+    <!-- HUD (In-game UI) -->
+    <div id="hud" class="hud">
+        <div class="hud-top">
+            <div class="score-display">
+                <span class="score-label">SCORE</span>
+                <span class="score-value" id="scoreDisplay">0</span>
+            </div>
+            <div class="multiplier-display" id="multiplierDisplay">1.0x</div>
+        </div>
+        <div class="hud-bottom">
+            <div class="coins-display">
+                <span class="coin-icon">💰</span>
+                <span id="coinsDisplay">0</span>
+            </div>
+            <div class="distance-display">
+                <span id="distanceDisplay">0m</span>
+            </div>
+            <div class="powerup-display" id="powerupDisplay"></div>
+        </div>
+    </div>
+
+    <!-- Mobile Controls Hint -->
+    <div id="controlsHint" class="controls-hint">
+        <div class="hint-text">↑ JUMP • ↓ SLIDE • ← → LANE</div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+  </html>
